@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Al Rafi || Protfolio</title>
+</head>
+<style>
+    .animate-delay-1 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-delay-2 {
+        animation-delay: 0.4s;
+    }
+
+    .animate-delay-3 {
+        animation-delay: 0.6s;
+    }
+
+    .animate-delay-4 {
+        animation-delay: 0.8s;
+    }
+
+    .animate-delay-5 {
+        animation-delay: 1s;
+    }
+
+    .animate-delay-6 {
+        animation-delay: 1.2s;
+    }
+
+    .product-slider-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .product-slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .product-slide {
+        min-width: 25%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    .product-slide img {
+        width: 100%;
+        max-height: 190px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .product-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 61px;
+    }
+
+    .product-prev-btn {
+        left: 10px;
+    }
+
+    .product-next-btn {
+        right: 10px;
+    }
+</style>
+
+<body>
+    <!-- Header -->
+    <header class="w-7/12 ml-64 mt-8 rounded-xl" style="background-color:#5f39df;">
+        <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-teal-700 lg:px-8" style="width:93%;">
+            <nav class="hidden lg:flex lg:space-x-8 lg:py-2 ml-48" aria-label="Global" style="margin-left:4%;">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="" class="inline-flex items-center rounded-md px-3 py-2 text-base font-medium text-white"
+                    aria-current="page">Home</a>
+                <a href="#about"
+                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">About</a>
+                <a href="/protfolio.html"
+                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">Protfolio</a>
+                <a href="#experence"
+                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">EXPERENCE</a>
+                <a href="#service"
+                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">SERVICE</a>
+                <a href="/contact.html"
+                    class="inline-flex items-center rounded-md  px-3 py-2 text-sm font-bold text-black hover:bg-cyan-500 hover:text-yellow-400"
+                    style="background-color: #bfe520;">CONTACT
+                    ME</a>
+            </nav>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <nav class="lg:hidden" aria-label="Global" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                    aria-current="page">Dashboard</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <header class="w-9/12 ml-6 mb-10 mt-20">
+        <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-teal-700 lg:px-8">
+            <nav class="hidden lg:flex lg:space-x-8 lg:py-2 ml-48" aria-label="Global">
+                <!-- Set "Video Editing" as active -->
+                <a href="#videoedit"
+                    class="inline-flex items-center rounded-md px-3 py-2 text-xl font-bold text-purple-600"
+                    style="background-color: #BFE520;" aria-current="page">Video Editing</a>
+                <!-- Other links -->
+                <a href="#motion"
+                    class="inline-flex items-center rounded-md px-3 py-2 text-xl font-bold hover:bg-cyan-500 hover:text-yellow-400 text-purple-600">MOTION
+                    GRAPHIC DESIGN</a>
+                <a href="#graphic"
+                    class="inline-flex items-center rounded-md px-3 py-2 text-xl font-bold hover:bg-cyan-500 hover:text-yellow-400 text-purple-600">GRAPHIC
+                    DESIGN</a>
+                <a href="#ai"
+                    class="inline-flex items-center rounded-md px-3 py-2 text-xl font-bold hover:bg-cyan-500 hover:text-yellow-400 text-purple-600">AI
+                    GENERATED</a>
+            </nav>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <nav class="lg:hidden" aria-label="Global" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <!-- Set "Video Editing" as active -->
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-white"
+                    style="background-color: #BFE520;" aria-current="page">Video Editing</a>
+                <!-- Other links -->
+                <a href="#motion"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">MOTION
+                    GRAPHIC DESIGN</a>
+                <a href="#graphic"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">GRAPHIC
+                    DESIGN</a>
+                <a href="#ai"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">AI
+                    GENERATED</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Header -->
+
+    <!-- protfolio -->
+    <section>
+        <div class="relative h-screen">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop>
+                <source src="./img/videoplayback.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </section>
+    <!-- protfolio -->
+
+    <!-- Video Graphic -->
+    <section id="videoedit" class="w-full py-10">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-purple-600 p-2"
+                style="border-top: 1px solid rgb(204, 198, 198);border-bottom: 1px solid rgb(204, 198, 198);">
+                Video Editing
+            </h1>
+        </div>
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Card 1 -->
+                <a href="https://www.youtube.com/playlist?list=PLdbw9LKAlWfo9SkMXb61DuXWwWIEmHUZv" target="_blank">
+                    <div class="relative group h-80 ">
+                        <img src="https://fiverr-res.cloudinary.com/image/upload/w_880/q_auto,f_auto/v1/attachments/generic_asset/asset/0e58c7ec91d8ee64e13d372de3ee2da7-1593443459781/promo%20video%20-%20fiverr.jpg"
+                            alt="Photographs" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h2 class="text-2xl font-bold"
+                                style="background-color: #79878B;width: 76%;text-align: center;color: white;text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),
+                                       0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),
+                                       0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size: 61px;">
+                                Promo Video
+                            </h2>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card 2 -->
+                <a href="https://www.youtube.com/playlist?list=PLdbw9LKAlWfpIKoc_IHl4Yc1h2844LBG-" target="_blank">
+                    <div class="relative group h-80">
+                        <img src="https://i.ytimg.com/vi/t9Bj0Ni1ZT4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB3R_1YU2K__eYilUJFSwP5uG_dMA"
+                            alt="Videos" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h2 class="text-2xl font-bold"
+                                style="background-color: #79878B;width: 76%;text-align: center;color: white;text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),
+                                       0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),
+                                       0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size: 61px;">
+                                Color Grading
+                            </h2>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card 3 -->
+                <a href="https://www.youtube.com/playlist?list=PLdbw9LKAlWfrVWd89D04tMN2jICPYo5Lz" target="_blank">
+                    <div class="relative group h-80">
+                        <img src="https://cdn.uconnectlabs.com/wp-content/uploads/sites/33/2019/05/1-on1-interview.jpeg"
+                            alt="Tutorials" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h2 class="text-2xl font-bold"
+                                style="background-color: #79878B;width: 76%;text-align: center;color: white;text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),
+                                           0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),
+                                           0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size: 61px;">
+                                Interview
+                            </h2>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card 4 -->
+                <a href="https://www.youtube.com/playlist?list=PLdbw9LKAlWfppQo3dp-1-OPeJ0IaeHqXs" target="_blank">
+                    <div class="relative group h-80">
+                        <img src="https://gelarogracestudio.com/wp-content/uploads/2021/09/Visual_effects_Maker_Radiance_Vision_Group.jpeg"
+                            alt="Travel Vlogs" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h2 class="text-2xl font-bold"
+                                style="background-color: #79878B;width: 76%;text-align: center;color: white;text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),
+                                       0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),
+                                       0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size: 61px;">
+                                VFX & SFX
+                            </h2>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card 5 -->
+                <a href="https://www.youtube.com/playlist?list=PLdbw9LKAlWfrXFaUibAV4esOPz81913Ld" target="_blank">
+                    <div class="relative group h-80">
+                        <img src="https://media.wired.com/photos/620eb0f39266d5d11c07b3c5/master/pass/Gear-Podcast-Gear-1327244548.jpg"
+                            alt="Travel Vlogs" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h2 class="text-2xl font-bold"
+                                style="background-color: #79878B;width: 76%;text-align: center;color: white;text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),
+                                   0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),
+                                   0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size: 61px;">
+                                PodCast
+                            </h2>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card 6 -->
+                <a href="https://www.youtube.com/playlist?list=PLdbw9LKAlWfq68E00wLK4wF2IZkeJ7lCe" target="_blank">
+                    <div class="relative group h-80">
+                        <img src="https://i.guim.co.uk/img/media/d9bafc6b77fd795675d2016c5e8486c21ecfc9c1/0_192_6812_4088/master/6812.jpg?width=1200&quality=85&auto=format&fit=max&s=d9f8cf9f5b0a8dd3538fedcebf2a081e"
+                            alt="Travel Vlogs" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h2 class="text-2xl font-bold"
+                                style="background-color: #79878B;width: 76%;text-align: center;color: white;text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),
+                                       0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),
+                                       0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size: 61px;">
+                                Cinematics
+                            </h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Graphic -->
+
+    <!-- Motion Graphic Design -->
+    <section id="motion" class="w-full py-10">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-purple-600 p-2"
+                style="border-top: 1px solid rgb(204, 198, 198);border-bottom: 1px solid rgb(204, 198, 198);">Motion
+                Graphic Design</h1>
+        </div>
+        <div class="container mx-auto px-4 py-12" style="width: 88%;margin-left: 83px;">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Card 1 -->
+                <a href="https://www.youtube.com/playlist?list=PLdbw9LKAlWfomYNxSgGYDurYMz_2lg5RA" target="_blank">
+                    <div class="relative group bg-gray-800">
+                        <img src="https://i0.wp.com/vfxdownload.com/wp-content/uploads/2021/05/Big_Preview.jpg?fit=590%2C332&ssl=1"
+                            alt="ASUS" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
+                            <h2 class="text-lg font-bold text-center text-white">Motion Posters</h2>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="https://www.youtube.com/watch?v=rFV5lCVJQMc" target="_blank">
+                    <div class="relative group bg-gray-800">
+                        <img src="https://img.freepik.com/free-vector/collection-ready-animation-female-character_79603-1741.jpg"
+                            alt="ASUS" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
+                            <h2 class="text-lg font-bold text-center text-white">Character Animation</h2>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card 3 -->
+                <a href="https://www.youtube.com/watch?v=GDvQds0c898&feature=youtu.be">
+                    <div class="relative group bg-gray-800">
+                        <img src="https://cdn.svgator.com/images/2021/08/logo-animation-example-conversable.gif"
+                            alt="ASUS" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
+                            <h2 class="text-lg font-bold text-center text-white">Logo Animation</h2>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card 4 -->
+                <a href="https://www.youtube.com/shorts/N9p18GF7Gjc" target="_blank">
+                    <div class="relative group bg-gray-800">
+                        <img src="https://cdn.prod.website-files.com/5fac161927bf86485ba43fd0/64b3c171c5c9414b8b2ea6e4_Blog%20Cover_2023_07_8%20Benefits%20of%20Podcasting%20_%20Why%20You%20Must%20Start%20a%20Podcast.webp"
+                            alt="ASUS" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
+                            <h2 class="text-lg font-bold text-center text-white">Motion Posters</h2>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card 5 -->
+                <a href="https://www.youtube.com/shorts/3ZOoO8oomKY">
+                    <div class="relative group bg-gray-800">
+                        <div class="w-full h-48 overflow-hidden">
+                            <video class="w-full h-full object-cover" src="./img/motion.mp4" autoplay loop
+                                muted></video>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
+                            <h2 class="text-lg font-bold text-center text-white">Motion Posters</h2>
+                        </div>
+                    </div>
+                </a>
+
+
+                <!-- Card 6 -->
+                <a href="https://youtube.com/shorts/klDN0jr6Aho?si=psePrsJH04CTN_3q" target="_blank">
+                    <div class="relative group bg-gray-800">
+                        <div class="w-full h-48 overflow-hidden">
+                            <video class="w-full h-full object-cover" src="./img/v.mp4" autoplay loop muted></video>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
+                            <h2 class="text-lg font-bold text-center text-white">3D Marketing</h2>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- Motion Graphic Design -->
+
+    <!-- Slider -->
+    <section id="graphic" class="mb-10 ml-40 mt-8">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-purple-600 p-2"
+                style="border-top: 1px solid rgb(204, 198, 198);border-bottom: 1px solid rgb(204, 198, 198);width: 93%;">
+                Motion
+                Graphic Design</h1>
+        </div>
+        <div class="relative mx-auto" style="margin-right: 10%;">
+            <button
+                class="slider-btn prev-btn absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-2">&#8249;</button>
+            <div class="slider overflow-hidden">
+                <div class="slide flex transition-transform duration-500">
+                    <div class="card bg-cover bg-center flex items-center justify-center text-white text-2xl font-bold h-64  mx-2"
+                        style="background-image: url('./img/slide1.png');"></div>
+                    <div class="card bg-cover bg-center flex items-center justify-center text-white text-2xl font-bold h-64  mx-2"
+                        style="background-image: url('./img/drink.png');"></div>
+                    <div class="card bg-cover bg-center flex items-center justify-center text-white text-2xl font-bold h-64  mx-2"
+                        style="background-image: url('./img/26th-march-dcl-social-media.png');"></div>
+                    <div class="card bg-cover bg-center flex items-center justify-center text-white text-2xl font-bold h-64  mx-2"
+                        style="background-image: url('./img/lenovo-neck-band-01.png');"></div>
+                    <div class="card bg-cover bg-center flex items-center justify-center text-white text-2xl font-bold h-64  mx-2"
+                        style="background-image: url('./img/slide1.png');"></div>
+                    <div class="card bg-cover bg-center flex items-center justify-center text-white text-2xl font-bold h-64  mx-2"
+                        style="background-image: url('./img/drink.png');"></div>
+
+                </div>
+            </div>
+            <button
+                class="slider-btn next-btn absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-2">&#8250;</button>
+        </div>
+        <a href="https://www.behance.net/yaminsnigdho" target="_blank"> <button
+                class="see-more mt-4 mx-auto block bg-purple-600 text-white py-2 px-4 rounded"
+                style="margin-left: 39%;">See More</button></a>
+    </section>
+
+    <!-- Slider -->
+    <section id="ai" class="mb-10 ml-18 mt-32">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-purple-600 p-2"
+                style="border-top: 1px solid rgb(204, 198, 198);border-bottom: 1px solid rgb(204, 198, 198);width: 93%;">
+                Ai Generated Image</h1>
+        </div>
+        <div class="product-slider-container">
+            <div class="product-slider">
+                <div class="product-slide">
+                    <img src="./img/ai1.png" alt="Dell Laptop">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai10.png" alt="Lenovo Earphones">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai11.png" alt="Rapoo Headphone">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai12.png" alt="Storia Drink">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai13.png" alt="Dell Laptop">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai2.png" alt="Lenovo Earphones">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai3.png" alt="Rapoo Headphone">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai4.png" alt="Storia Drink">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai5.png" alt="Storia Drink">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai6.png" alt="Storia Drink">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai7.png" alt="Storia Drink">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai8.png" alt="Storia Drink">
+                </div>
+                <div class="product-slide">
+                    <img src="./img/ai9.png" alt="Storia Drink">
+                </div>
+            </div>
+            <button class="product-nav-btn product-prev-btn">❮</button>
+            <button class="product-nav-btn product-next-btn">❯</button>
+        </div>
+        <a href="https://www.behance.net/yaminsnigdho" target="_blank"> <button
+                class="see-more mt-4 mx-auto block bg-purple-600 text-white py-2 px-4 rounded">See More</button></a>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer mt-20">
+        <div class="footer-content">
+            <h2 style="font-size: 30px; font-weight: 800;">CONTACT ME</h2>
+            <div class="contact-info flex">
+                <div class="text-xl font-bold text-left">
+                    <h3>Email - alrafikhandoker7@gmail.com</h3>
+                    <h3>Contact - 01400310747</h3>
+                </div>
+                <div class="text-xl font-bold text-left">
+                    <h3>WhatsApp - 01788711329</h3>
+                    <h3>Address - Gazipur, Dhaka, Bangladesh</h3>
+                </div>
+            </div>
+            <div class="social-media">
+                <p style="font-size: 20px; font-weight: 500;">Follow us</p>
+                <div>
+                    <div>
+
+                    </div>
+                    <div class="social-icons-container">
+                        <div class="social-icons">
+                            <a href="https://youtube.com/@snapspoise6006?si=ZPSNTpB2Z0RT3Gtd" target="_blank"><img
+                                    src="./img/youtube.png" alt="YouTube"></a>
+                            <a href="https://wa.link/z5esa4" target="_blank"><img src="./img/social.png"
+                                    alt="WhatsApp"></a>
+                            <a href="https://www.facebook.com/tahsin.islam.52831" target="_blank"><img
+                                    src="./img/facebook.png" alt="Facebook"></a>
+                            <a href="https://www.instagram.com/" target="_blank"><img src="./img/instagram.png"
+                                    alt="Instagram"></a>
+                            <a href="https://www.linkedin.com/in/al-rafi-khandoker-083841198" target="_blank"><img
+                                    src="./img/linkedin.png" alt="LinkedIn"></a>
+                            <a href="https://www.behance.net/yaminsnigdho" target="_blank"><img src="./img/behance.png"
+                                    alt="Behance"></a>
+                        </div>
+                    </div>
+
+                    <style>
+                        .social-icons-container {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                        }
+
+                        .social-icons {
+                            display: flex;
+                            gap: 10px;
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .social-icons::before,
+                        .social-icons::after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            width: 100px;
+                            height: 2px;
+                            background-color: white;
+                        }
+
+                        .social-icons::before {
+                            left: -110px;
+                        }
+
+                        .social-icons::after {
+                            right: -110px;
+                        }
+                    </style>
+                </div>
+            </div>
+            <p class="copyright">copyright to alrafikhandoker</p>
+        </div>
+    </footer>
+    <!-- footer -->
+
+</body>
+
+</html>
+<script>
+    const productSlider = document.querySelector('.product-slider');
+    const productSlides = document.querySelectorAll('.product-slide');
+    const productPrevBtn = document.querySelector('.product-prev-btn');
+    const productNextBtn = document.querySelector('.product-next-btn');
+    let productIndex = 0;
+
+    function showProductSlide(i) {
+        productIndex = (i + productSlides.length) % productSlides.length;
+        productSlider.style.transform = `translateX(${-productIndex * 25}%)`;
+    }
+
+    function nextProductSlide() {
+        showProductSlide(productIndex + 1);
+    }
+
+    function prevProductSlide() {
+        showProductSlide(productIndex - 1);
+    }
+
+    productNextBtn.addEventListener('click', nextProductSlide);
+    productPrevBtn.addEventListener('click', prevProductSlide);
+
+    setInterval(nextProductSlide, 3000);
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.querySelector('.slider');
+        const slide = document.querySelector('.slide');
+        const cards = document.querySelectorAll('.card');
+        const cardWidth = cards[0].offsetWidth + 16; // Card width + margin
+        const totalCards = cards.length;
+        const cardsPerView = Math.floor(slider.offsetWidth / cardWidth);
+        let currentIndex = 0;
+        let intervalId;
+
+        const updateSliderPosition = (instant = false) => {
+            if (instant) {
+                slide.style.transition = 'none'; // Temporarily disable transition
+            } else {
+                slide.style.transition = 'transform 0.5s'; // Re-enable transition
+            }
+            const offset = -currentIndex * cardWidth;
+            slide.style.transform = `translateX(${offset}px)`;
+            if (instant) {
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        slide.style.transition = 'transform 0.5s'; // Ensure transition is re-enabled
+                    });
+                });
+            }
+        };
+
+        const startAutoPlay = () => {
+            intervalId = setInterval(() => {
+                if (currentIndex < totalCards - cardsPerView) {
+                    currentIndex += 1;
+                } else {
+                    currentIndex = 0; // Go back to the first card
+                }
+                updateSliderPosition();
+            }, 3000); // Adjust the interval time (in milliseconds) as needed
+        };
+
+        const stopAutoPlay = () => {
+            clearInterval(intervalId);
+        };
+
+        // Event listeners for previous and next buttons
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex -= 1;
+            } else {
+                currentIndex = totalCards - cardsPerView; // Go to the last set of cards
+            }
+            updateSliderPosition();
+            stopAutoPlay();
+            startAutoPlay(); // Restart autoplay after manual interaction
+        });
+
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            if (currentIndex < totalCards - cardsPerView) {
+                currentIndex += 1;
+            } else {
+                currentIndex = 0; // Go back to the first card
+            }
+            updateSliderPosition();
+            stopAutoPlay();
+            startAutoPlay(); // Restart autoplay after manual interaction
+        });
+
+        // Start autoplay when DOM content is loaded
+        startAutoPlay();
+
+        // Restart autoplay when mouse leaves the slider
+        slider.addEventListener('mouseleave', () => {
+            startAutoPlay();
+        });
+
+        // Stop autoplay when mouse enters the slider
+        slider.addEventListener('mouseenter', () => {
+            stopAutoPlay();
+        });
+    });
+</script>

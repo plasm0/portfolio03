@@ -9,6 +9,67 @@
 
 </head>
 <style>
+    header {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #5f39df;
+        border-radius: 1rem;
+    }
+
+    .navbar-container {
+        max-width: 93%;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Styles for large screens */
+    @media (min-width: 1024px) {
+        .navbar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        nav a {
+            margin: 0 1rem;
+        }
+    }
+
+    /* Styles for medium and smaller screens */
+    @media (max-width: 1023px) {
+        nav {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 0.5rem 0;
+        }
+    }
+
     .name-container {
         position: relative;
         display: inline-block;
@@ -166,22 +227,23 @@
     <img src="./img/leaf1.png" alt="Product Background" class="bottom-right-img">
 
 
-    <header class="w-8/12 ml-48 mt-8 rounded-xl" style="background-color:#5f39df;">
-        <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-teal-700 lg:px-8">
-            <nav class="hidden lg:flex lg:space-x-8 lg:py-2 ml-32" aria-label="Global">
-                <a href="/index.html"
-                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white"
+     <!-- Header -->
+     <header class="w-7/12 ml-64 mt-8 rounded-xl" style="background-color:#5f39df;">
+        <div class="navbar-container mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-teal-700 lg:px-8">
+            <nav class="hidden lg:flex lg:space-x-8 lg:py-2 ml-48" aria-label="Global" style="margin-left:4%;">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="/index.html" class="inline-flex items-center rounded-md px-3 py-2 text-base font-medium text-white"
                     aria-current="page">Home</a>
                 <a href="#about"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">About</a>
+                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">About</a>
                 <a href="/protfolio.html"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">Protfolio</a>
+                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">Protfolio</a>
                 <a href="#experence"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">EXPERENCE</a>
+                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">EXPERENCE</a>
                 <a href="#service"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">SERVICE</a>
+                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">SERVICE</a>
                 <a href="/contact.html"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-black hover:bg-cyan-500 hover:text-yellow-400"
+                    class="inline-flex items-center rounded-md px-3 py-2 text-sm font-bold text-black hover:bg-cyan-500 hover:text-yellow-400"
                     style="background-color: #bfe520;">CONTACT
                     ME</a>
             </nav>
@@ -203,6 +265,7 @@
         </nav>
     </header>
 
+    <!-- Header -->
     <section class="mt-10">
         <a href="/portfolio.html" target="_blank" style="position: relative; display: block; text-align: center;">
             <div style="position: relative; display: inline-block;">
@@ -212,7 +275,7 @@
             </div>
         </a>
     </section>
-    
+
 
 
     <section>

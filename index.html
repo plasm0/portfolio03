@@ -1,34 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Sanad -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    <link rel="./img/branding.png" href="favicon.ico" type="image/x-icon">
     <title>Al Rafi</title>
 </head>
+<style>
+    /* Base styles */
+    header {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #5f39df;
+        border-radius: 1rem;
+    }
+
+    .navbar-container {
+        max-width: 93%;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Styles for large screens */
+    @media (min-width: 1024px) {
+        .navbar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        nav a {
+            margin: 0 1rem;
+        }
+    }
+
+    /* Styles for medium and smaller screens */
+    @media (max-width: 1023px) {
+        nav {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 0.5rem 0;
+        }
+    }
+
+    .space-x-4> :not([hidden])~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(1rem * var(--tw-space-x-reverse));
+        margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .mt-2 {
+        margin-top: 0.5rem;
+    }
+
+    .h-12 {
+        height: 3rem;
+    }
+
+    .zoomable {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .zoomable:hover {
+        transform: scale(1.3);
+    }
+
+    .hover-card {
+        perspective: 1000px;
+        position: relative;
+        height: 300px;
+        transition: box-shadow 0.5s ease;
+    }
+
+    .hover-card:hover {
+        box-shadow: rgba(0, 0, 0, 0.4) -5px 5px,
+            rgba(0, 0, 0, 0.3) -10px 10px,
+            rgba(0, 0, 0, 0.2) -15px 15px,
+            rgba(0, 0, 0, 0.1) -20px 20px,
+            rgba(0, 0, 0, 0.05) -25px 25px;
+    }
+
+    .hover-card:hover {
+        transform: rotateY(180deg);
+
+    }
+</style>
 
 <body>
     <!-- Header -->
     <header class="w-7/12 ml-64 mt-8 rounded-xl" style="background-color:#5f39df;">
-        <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-teal-700 lg:px-8" style="width:93%;">
+        <div class="navbar-container mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-teal-700 lg:px-8">
             <nav class="hidden lg:flex lg:space-x-8 lg:py-2 ml-48" aria-label="Global" style="margin-left:4%;">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="" class="inline-flex items-center rounded-md px-3 py-2 text-base font-medium text-white"
                     aria-current="page">Home</a>
                 <a href="#about"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">About</a>
+                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">About</a>
                 <a href="/protfolio.html"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">Protfolio</a>
+                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">Protfolio</a>
                 <a href="#experence"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">EXPERENCE</a>
+                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">EXPERENCE</a>
                 <a href="#service"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">SERVICE</a>
+                    class="inline-flex items-center rounded-md px-3 py-2 text-base font-bold text-white hover:bg-cyan-500 hover:text-yellow-400">SERVICE</a>
                 <a href="/contact.html"
-                    class="inline-flex items-center rounded-md  px-3 py-2 text-sm font-bold text-black hover:bg-cyan-500 hover:text-yellow-400"
+                    class="inline-flex items-center rounded-md px-3 py-2 text-sm font-bold text-black hover:bg-cyan-500 hover:text-yellow-400"
                     style="background-color: #bfe520;">CONTACT
                     ME</a>
             </nav>
@@ -100,39 +206,44 @@
                 <h1
                     class="text-3xl font-bold text-purple-600 mb-2 profession-header animate__animated animate__fadeInLeft">
                     I am by Profession</h1>
-                <h2 class="text-3xl font-bold mt-6 mb-6">
-                    <span class="highlight animate__animated animate__fadeInLeft">
-                        as a video Editor & Motion Graphic Designer
-                    </span>
-                </h2>
+                    <h2 class="text-3xl font-bold mt-6 mb-6">
+                        <span class="highlight animate__animated animate__fadeInLeft">
+                            as a video Editor & Motion Graphic Designer
+                        </span>
+                    </h2>
+                    
                 <div class="mt-4 text-xl flex">
                     <div class="info-1 animate__animated animate__fadeInLeft">
                         <p class="text-purple-600 font-bold">Freelance : <span
-                                class="font-semibold text-black">Available</span></p>
-                        <p class="text-purple-600 font-bold">Gender : <span class="font-semibold text-black">Male</span>
+                                class="font-normal text-black">Available</span></p>
+                        <p class="text-purple-600 font-bold">Gender : <span class="font-normal text-black">Male</span>
                         </p>
-                        <p class="text-purple-600 font-bold">Language : <span class="font-semibold text-black">English &
+                        <p class="text-purple-600 font-bold">Language : <span class="font-normal text-black">English &
                                 Bangla</span></p>
-                        <p class="text-purple-600 font-bold">Work : <span class="font-semibold text-black">Video Editor,
+                        <p class="text-purple-600 font-bold">Work : <span class="font-normal text-black">Video Editor,
                                 Motion Graphic Design</span></p>
                     </div>
                     <div class="info-2 animate__animated animate__fadeInLeft">
-                        <p class="text-purple-600">Email : <span
-                                class="font-semibold text-black">alrafikhandoker7@gmail.com</span></p>
-                        <p class="text-purple-600">Country : <span class="font-semibold text-black">Bangladesh</span>
+                        <p class="text-purple-600 font-bold">Email : <span
+                                class="font-normal text-black">alrafikhandoker7@gmail.com</span></p>
+                        <p class="text-purple-600 font-bold">Country : <span
+                                class="font-normal text-black">Bangladesh</span>
                         </p>
                     </div>
                 </div>
                 <div class="mt-6 ml-44 tools-header animate__animated animate__fadeInLeft">
                     <h3 class="text-xl font-bold ml-40 mb-10">Tools</h3>
                     <div class="flex space-x-4 mt-2 tools-icons animate__animated animate__fadeInLeft">
-                        <img src="./img/premiere-pro.png" alt="Adobe Premiere Pro" class="h-12">
-                        <img src="./img/after-effects.png" alt="Adobe After Effects" class="h-12">
-                        <img src="./img/illustrator.png" alt="Adobe Illustrator" class="h-12">
-                        <img src="./img/photoshop.png" alt="Adobe Photoshop" class="h-12">
+                        <img src="./img/premiere-pro.png" alt="Adobe Premiere Pro" class="h-12 zoomable"
+                            style="width: auto;">
+                        <img src="./img/after-effects.png" alt="Adobe After Effects" class="h-12 zoomable"
+                            style="width: auto;">
+                        <img src="./img/illustrator.png" alt="Adobe Illustrator" class="h-12 zoomable"
+                            style="width: auto;">
+                        <img src="./img/photoshop.png" alt="Adobe Photoshop" class="h-12 zoomable" style="width: auto;">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png"
-                            alt="DaVinci Resolve" class="h-12">
-                        <img src="./img/premiere-pro.png" alt="Other Tool" class="h-12">
+                            alt="DaVinci Resolve" class="h-12 zoomable" style="width: auto;">
+                        <img src="./img/premiere-pro.png" alt="Other Tool" class="h-12 zoomable" style="width: auto;">
                     </div>
                 </div>
             </div>
@@ -155,8 +266,8 @@
             </div>
             <div class="flex justify-center mt-8">
                 <a href="javascript:void(0);" onclick="downloadCV();"
-                    class="button button-1 animate__animated animate__fadeInLeft font-bold">GET CV</a>
-                <a href="/contact.html" target="_blank"
+                    class="button button-1 animate__animated animate__fadeInLeft font-bold cvGet">GET CV</a>
+                <a href="./contact.html" target="_blank"
                     class="button button-2 animate__animated animate__fadeInLeft font-bold">HIRE ME</a>
             </div>
         </div>
@@ -307,7 +418,7 @@
         <div class="flex justify-center items-center mt-10 p-5">
             <div
                 class="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-2 grid-cols-1 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-5 gap-5 px-5">
-                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-1">
+                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-1 hover-card">
                     <h1 class="font-extrabold text-2xl mb-6" style="color: #BFE520;">Video Editing</h1>
                     <ul class="text-left list-none">
                         <li><span class="text-green-300">#</span> promotional</li>
@@ -321,7 +432,8 @@
                     </ul>
                 </div>
 
-                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-2">
+
+                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-2 hover-card">
                     <h1 class="font-extrabold text-2xl mb-6" style="color: #BFE520;">Graphic Design</h1>
                     <ul class="text-left list-none">
                         <li><span class="text-green-300">#</span> logos</li>
@@ -332,7 +444,7 @@
                     </ul>
                 </div>
 
-                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-3">
+                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-3 hover-card">
                     <h1 class="font-extrabold text-2xl mb-6" style="color: #BFE520;">Motion Graphic</h1>
                     <ul class="text-left list-none">
                         <li><span class="text-green-300">#</span> Dynamic animations</li>
@@ -343,7 +455,7 @@
                     </ul>
                 </div>
 
-                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-4">
+                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-4 hover-card">
                     <h1 class="font-extrabold text-2xl mb-6" style="color: #BFE520;">AI Prompt</h1>
                     <ul class="text-left list-none">
                         <li><span class="text-green-300">#</span> Specializes in developing AI-generated text and
@@ -354,7 +466,7 @@
                     </ul>
                 </div>
 
-                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-5">
+                <div class="text-center w-[200px] rounded-2xl p-5 border ww text-white delay-5 hover-card">
                     <h1 class="font-extrabold text-2xl mb-6" style="color: #BFE520;">Voice Over</h1>
                     <ul class="text-left list-none">
                         <li><span class="text-green-300">#</span> professional voice recordings</li>
@@ -374,7 +486,8 @@
 
 
     <!-- protfolio -->
-    <a href="/portfolio.html" class="mt-20" target="_blank" style="position: relative; display: block; text-align: center;">
+    <a href="protfolio.html" class="mt-20" target="_blank"
+        style="position: relative; display: block; text-align: center;">
         <div style="position: relative; display: inline-block;">
             <video src="./img/gif_2.mp4" autoplay loop muted style="display: block; width: 100%; height: auto;">
                 Your browser does not support the video tag.
@@ -384,7 +497,7 @@
                 Here</button>
         </div>
     </a>
-    
+
 
 
     <!-- protfolio -->
